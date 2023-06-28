@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: rent-home-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=rent-home
+    username: postgres
+    password: admin
+  jpa:
+    database: postgresql
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+
+  liquibase:
+    enabled: false
+    default-schema: postgres
+    liquibase-schema: public
+    user: postgres
+    password: admin
+    change-log:
