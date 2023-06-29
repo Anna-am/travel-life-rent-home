@@ -7,7 +7,7 @@ spring:
     password: admin
   jpa:
     database: postgresql
-    open-in-view: false
+    open-in-view: true
     hibernate:
       ddl-auto: validate
 
