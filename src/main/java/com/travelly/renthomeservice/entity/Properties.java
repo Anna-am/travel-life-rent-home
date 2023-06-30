@@ -60,13 +60,13 @@ public class Properties implements Serializable {
     private BigDecimal pricePerMonth;
 
     @JoinColumn(name = "minimum_stay_days")
-    private int minimumStayDays;
+    private Integer minimumStayDays;
 
     @JoinColumn(name = "maximum_stay_days")
-    private int maximumStayDays;
+    private Integer maximumStayDays;
 
     @JoinColumn(name = "available_booking")
-    private boolean availableBooking;
+    private Boolean availableBooking;
 
     @JoinColumn(name = "created_at")
     private LocalDateTime createdAt;

@@ -4,11 +4,12 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
-
-    <changeSet id="1" author="vyacheslav-turchkov">
-
+    <changeSet id="1" author="vyacheslav_turchkov">
+    <sql>
+        create schema if not exists postgres;
+    </sql>
         <createTable tableName="rh_properties">
-            <column autoIncrement="true" name="id" type="uuid" defaultValue="gen_random_uuid()">
+            <column name="id" type="uuid">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="property_name" type="varchar(255)">
@@ -38,6 +39,9 @@
             <column name="bathrooms" type="varchar(255)">
                 <constraints nullable="false"/>
             </column>
+            <column name="accommodates" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
             <column name="price_per_night" type="numeric">
                 <constraints nullable="false"/>
             </column>
@@ -59,5 +63,8 @@
                 <constraints nullable="true"/>
             </column>
         </createTable>
-    </changeSet>
+        <rollback>
+            <dropTable tableName="rh_properties"/>
+        </rollback>
+</changeSet>
 </databaseChangeLog>
