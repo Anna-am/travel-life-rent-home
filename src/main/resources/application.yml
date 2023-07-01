@@ -7,14 +7,14 @@ spring:
     password: admin
   jpa:
     database: postgresql
-    open-in-view: true
+    open-in-view: false
     hibernate:
       ddl-auto: validate
 
   liquibase:
-    enabled: false
+    enabled: true
     default-schema: postgres
     liquibase-schema: public
     user: postgres
     password: admin
-    change-log:
+    change-log: classpath:changelog/changelog-v1.0.xml

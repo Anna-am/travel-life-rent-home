@@ -14,7 +14,7 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor(force = true)
 @AllArgsConstructor
-@Table(name = "company_information", schema = "company")
+@Table(name = "rh_reviews", schema = "postgres")
 public class rhReviews {
 
     @Id

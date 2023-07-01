@@ -6,8 +6,8 @@
                     http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
     <changeSet id="1" author="KirillYunitsin">
-        <sql dbms="postgres">
-            CREATE SCHEMA IF NOT EXISTS rentHome;
+        <sql>
+            CREATE SCHEMA IF NOT EXISTS postgres;
         </sql>
         <createTable tableName="rh_reviews" remarks="Таблица отзывов">
 
@@ -28,7 +28,9 @@
             <column name="created_at" type="Timestamp" remarks="Дата создания">
                 <constraints nullable="false"/>
             </column>
-
         </createTable>
+        <rollback>
+            <dropTable tableName="rh_reviews"/>
+        </rollback>
     </changeSet>
 </databaseChangeLog>
