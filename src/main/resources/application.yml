@@ -12,9 +12,9 @@ spring:
       ddl-auto: validate
 
   liquibase:
-    enabled: false
+    enabled: true
     default-schema: postgres
     liquibase-schema: public
     user: postgres
     password: admin
-    change-log:
+    change-log: classpath:changelog/changelog-v1.0.xml
