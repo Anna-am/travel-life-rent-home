@@ -1,0 +1,52 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-rh_bookings
+      author: Anastasiya
+      changes:
+        - createTable:
+            tableName: rh_bookings
+            columns:
+              - column:
+                  name: booking_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+              - column:
+                  name: property_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+              - column:
+                  name: check_in_date
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: check_out_date
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: total_price
+                  type: numeric
+                  constraints:
+                    nullable: false
+              - column:
+                  name: payment_status
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  constraints:
+                    nullable: false
+
+
+
+
