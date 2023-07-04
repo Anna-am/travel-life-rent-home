@@ -23,56 +23,55 @@ public class Properties implements Serializable {
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     private UUID id;
 
-    @JoinColumn(name = "property_name")
+    @Column(name = "property_name")
     private String propertyName;
 
-    @JoinColumn(name = "description")
+    @Column(name = "description")
     private String description;
 
-    @JoinColumn(name = "address")
+    @Column(name = "address")
     private String address;
 
-    @JoinColumn(name = "city")
+    @Column(name = "city")
     private String city;
 
-    @JoinColumn(name = "zip_code")
+    @Column(name = "zip_code")
     private String zipCode;
 
-    @JoinColumn(name = "country")
+    @Column(name = "country")
     private String country;
 
-    @JoinColumn(name = "property_type")
+    @Column(name = "property_type")
     private String propertyType;
 
-    @JoinColumn(name = "bedrooms")
+    @Column(name = "bedrooms")
     private String bedrooms;
 
-    @JoinColumn(name = "bathrooms")
+    @Column(name = "bathrooms")
     private String bathrooms;
 
-    @JoinColumn(name = "accommodates")
+    @Column(name = "accommodates")
     private String accommodates;
 
-    @JoinColumn(name = "price_per_night")
+    @Column(name = "price_per_night")
     private BigDecimal pricePerNight;
 
-    @JoinColumn(name = "price_per_month")
+    @Column(name = "price_per_month")
     private BigDecimal pricePerMonth;
 
-    @JoinColumn(name = "minimum_stay_days")
+    @Column(name = "minimum_stay_days")
     private Integer minimumStayDays;
 
-    @JoinColumn(name = "maximum_stay_days")
+    @Column(name = "maximum_stay_days")
     private Integer maximumStayDays;
 
-    @JoinColumn(name = "available_booking")
+    @Column(name = "available_booking")
     private Boolean availableBooking;
 
-    @JoinColumn(name = "created_at")
+    @Column(name = "created_at")
     private LocalDateTime createdAt;
 
-    @JoinColumn(name = "updated_at")
+    @Column(name = "updated_at")
     private LocalDateTime updatedAt;
-
 
 }
