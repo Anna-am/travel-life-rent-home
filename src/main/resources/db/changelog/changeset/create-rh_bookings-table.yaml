@@ -3,6 +3,12 @@ databaseChangeLog:
       id: create-rh_bookings
       author: Anastasiya
       changes:
+        - sql:
+            dbms: postgresql
+            endDelimiter: ;
+            splitStatements: true
+            sql: |
+              CREATE SCHEMA IF NOT EXISTS postgres;
         - createTable:
             tableName: rh_bookings
             columns:
