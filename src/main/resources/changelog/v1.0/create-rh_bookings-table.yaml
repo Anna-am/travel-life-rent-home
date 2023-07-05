@@ -46,12 +46,12 @@ databaseChangeLog:
                   name: created_at
                   type: timestamp
                   constraints:
-                    nullable: false
+                    nullable: true
               - column:
                   name: updated_at
                   type: timestamp
                   constraints:
-                    nullable: false
+                    nullable: true
 
 
 

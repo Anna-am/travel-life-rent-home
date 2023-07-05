@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.UUID;
 
-@Entity //исправить импорт
+@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,8 +18,8 @@ import java.util.UUID;
 public class Bookings {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "booking_id")
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "id")
     private UUID id;
 
     @JoinColumn(name = "property_id")
