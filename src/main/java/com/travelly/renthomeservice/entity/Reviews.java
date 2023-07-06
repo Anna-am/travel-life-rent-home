@@ -15,7 +15,7 @@ import java.util.UUID;
 @NoArgsConstructor(force = true)
 @AllArgsConstructor
 @Table(name = "rh_reviews", schema = "postgres")
-public class rhReviews {
+public class Reviews {
 
     @Id
     @Column(name = "id")
