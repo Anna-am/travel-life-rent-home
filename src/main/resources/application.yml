@@ -18,4 +18,3 @@ spring:
     user: postgres
     password: admin
     change-log: classpath:changelog/changelog-v1.0.xml
-
