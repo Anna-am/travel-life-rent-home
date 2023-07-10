@@ -5,27 +5,29 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                     http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-    <changeSet id="1" author="KirillYunitsin">
+    <changeSet id="1.0" author="KirillYunitsin">
         <sql>
             CREATE SCHEMA IF NOT EXISTS postgres;
         </sql>
         <createTable tableName="rh_reviews" remarks="Таблица отзывов">
 
-            <column name="id" type="UUID">
-                <constraints primaryKey="true"/>
+            <column name="id" type="UUID" remarks="Уникальный идентификатор">
+                <constraints primaryKey="true" nullable="false"/>
             </column>
 
-            <column name="property_id" type="UUID">
+            <column name="property_id" type="UUID" remarks="Связь с табл проперти">
                 <constraints nullable="false"/>
             </column>
 
-            <column name="rating" type="NUMERIC(5,2)" remarks="Рейтинг"/>
-
-            <column name="comment" type="VARCHAR(255)" remarks="комментарий">
+            <column name="rating" type="NUMERIC(5,2)" remarks="Рейтинг">
                 <constraints nullable="false"/>
             </column>
 
-            <column name="created_at" type="Timestamp" remarks="Дата создания">
+            <column name="comment" type="VARCHAR(255)" remarks="Комментарий">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="created_at" type="TIMESTAMP" remarks="Дата создания">
                 <constraints nullable="false"/>
             </column>
         </createTable>

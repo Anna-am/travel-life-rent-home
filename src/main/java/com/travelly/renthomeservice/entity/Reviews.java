@@ -1,10 +1,7 @@
 package com.travelly.renthomeservice.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.*;
 
 import java.sql.Timestamp;
 import java.util.UUID;
@@ -14,8 +11,10 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor(force = true)
 @AllArgsConstructor
+@Getter
+@Setter
 @Table(name = "rh_reviews", schema = "postgres")
-public class rhReviews {
+public class Reviews {
 
     @Id
     @Column(name = "id")
