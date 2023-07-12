@@ -17,7 +17,7 @@ public class Images {
     @Column(name = "property_id")
     private UUID propertyId;
     @Column(name = "value")
-    private Byte[] value;
+    private byte[] value;
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
