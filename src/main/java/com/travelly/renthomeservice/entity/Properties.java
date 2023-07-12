@@ -7,6 +7,7 @@ import org.hibernate.annotations.GenericGenerator;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -74,4 +75,11 @@ public class Properties implements Serializable {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name="property_id")
+    private List <Bookings> bookings;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name="property_id")
+    private List <Reviews> reviews;
 }

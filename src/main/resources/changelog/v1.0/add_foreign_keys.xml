@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+    <changeSet id="add_foreign_key_constraint" author="Anastasiya">
+        <!-- Добавление внешнего ключа в таблицу rh_bookings -->
+        <addForeignKeyConstraint baseTableName="rh_bookings"
+                                 baseColumnNames="property_id"
+                                 constraintName="fk_rh_bookings_rh_properties"
+                                 referencedTableName="rh_properties"
+                                 referencedColumnNames="id"
+                                 onDelete="CASCADE"/>
+
+        <!-- Добавление внешнего ключа в таблицу rh_reviews -->
+        <addForeignKeyConstraint baseTableName="rh_reviews"
+                                 baseColumnNames="property_id"
+                                 constraintName="fk_rh_reviews_rh_properties"
+                                 referencedTableName="rh_properties"
+                                 referencedColumnNames="id"
+                                 onDelete="CASCADE"/>
+
+    </changeSet>
+</databaseChangeLog>

@@ -21,7 +21,7 @@ public class Bookings {
     @Column(name = "id")
     private UUID id;
 
-    @JoinColumn(name = "property_id")
+    @Column(name = "property_id")
     private UUID propertyId;
 
     @Column(name = "check_in_date")
