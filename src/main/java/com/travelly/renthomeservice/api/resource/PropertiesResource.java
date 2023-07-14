@@ -25,5 +25,5 @@ public interface PropertiesResource {
             @ApiResponse(responseCode = "200", description = "Объявление создано",
                     content = {@Content(mediaType = "application/json",
                             schema = @Schema(implementation = PropertiesDto.class))})})
-    PropertiesDto createProperties(PropertiesDto propertiesDto);
+    void createProperties(PropertiesDto propertiesDto);
 }

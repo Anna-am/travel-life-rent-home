@@ -18,8 +18,8 @@ public class PropertiesController implements PropertiesResource {
 
 
     @Override
-    public PropertiesDto createProperties(PropertiesDto propertiesDto) {
+    public void createProperties(PropertiesDto propertiesDto) {
+        log.info("добавление объявления");
         propertiesService.addProperty(propertiesMapper.convertToProperties(propertiesDto));
-        return propertiesDto;
     }
 }

@@ -1,6 +1,5 @@
 package com.travelly.renthomeservice.service;
 
-import com.travelly.renthomeservice.api.dto.PropertiesDto;
 import com.travelly.renthomeservice.entity.Properties;
 import com.travelly.renthomeservice.repository.PropertiesRepository;
 import lombok.AllArgsConstructor;
@@ -15,10 +14,9 @@ public class PropertiesService {
 
     private final PropertiesRepository propertiesRepository;
 
-    public Properties addProperty(Properties properties) {
+    public void addProperty(Properties properties) {
+        log.info("сохранение объявления в бд");
         propertiesRepository.save(properties);
-        return properties;
     }
-
 
 }
