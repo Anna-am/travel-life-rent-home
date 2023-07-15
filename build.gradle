@@ -1,6 +1,7 @@
 plugins {
     id 'java-library'
     id 'checkstyle'
+//    id 'com.github.spotbugs' version '5.0.9'
     id 'org.springframework.boot' version '3.1.1'
     id 'io.spring.dependency-management' version '1.1.0'
 }
@@ -55,3 +56,9 @@ checkstyleMain {
 checkstyleTest {
     source ='src/test/java'
 }
+//spotbugs {
+//    showProgress = true
+//    effort = 'max'
+//    reportLevel = 'low'
+//    excludeFilter = file("config/spotbugs/exclude.xml")
+//}
