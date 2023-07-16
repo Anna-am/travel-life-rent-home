@@ -12,7 +12,7 @@ public class ReviewsMapper {
 
     private final ModelMapper modelMapper;
 
-    public ReviewsDtoRequest convertToDto(Reviews reviews) {
-        return modelMapper.map(reviews, ReviewsDtoRequest.class);
+    public Reviews convertToDto(ReviewsDtoRequest reviewsDtoRequest, Class<Reviews> reviewsClass) {
+        return modelMapper.map(reviewsDtoRequest, Reviews.class);
     }
 }
