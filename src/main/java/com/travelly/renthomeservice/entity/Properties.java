@@ -82,4 +82,8 @@ public class Properties implements Serializable {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name="property_id")
     private List <Reviews> reviews;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name="property_id")
+    private List <Images> images;
 }
