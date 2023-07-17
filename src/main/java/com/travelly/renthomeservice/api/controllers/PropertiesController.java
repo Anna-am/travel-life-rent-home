@@ -3,9 +3,11 @@ package com.travelly.renthomeservice.api.controllers;
 import com.travelly.renthomeservice.api.dto.PropertiesDto;
 import com.travelly.renthomeservice.api.resource.PropertiesResource;
 import com.travelly.renthomeservice.api.util.PropertiesMapper;
-import com.travelly.renthomeservice.service.PropertiesService;
+import com.travelly.renthomeservice.service.PropertiesServiceImp;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -13,13 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class PropertiesController implements PropertiesResource {
 
-    private final PropertiesService propertiesService;
+    private final PropertiesServiceImp propertiesServiceImp;
     private final PropertiesMapper propertiesMapper;
 
 
     @Override
-    public void createProperties(PropertiesDto propertiesDto) {
+    public ResponseEntity<Object> createProperties(PropertiesDto propertyDto) {
         log.info("добавление объявления");
-        propertiesService.addProperty(propertiesMapper.convertToProperties(propertiesDto));
+        propertiesServiceImp.addProperty(propertiesMapper.convertToProperties(propertyDto));
+        return ResponseEntity.ok(HttpStatus.OK);
     }
 }

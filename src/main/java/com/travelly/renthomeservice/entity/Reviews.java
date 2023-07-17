@@ -6,7 +6,6 @@ import lombok.*;
 import java.sql.Timestamp;
 import java.util.UUID;
 
-
 @Entity
 @Data
 @NoArgsConstructor(force = true)
