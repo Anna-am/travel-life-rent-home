@@ -76,14 +76,14 @@ public class Properties implements Serializable {
     private LocalDateTime updatedAt;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name="property_id")
-    private List <Bookings> bookings;
+    @JoinColumn(name = "property_id")
+    private List<Bookings> bookings;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name="property_id")
-    private List <Reviews> reviews;
+    @JoinColumn(name = "property_id")
+    private List<Reviews> reviews;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name="property_id")
-    private List <Images> images;
+    @JoinColumn(name = "property_id")
+    private List<Images> images;
 }
