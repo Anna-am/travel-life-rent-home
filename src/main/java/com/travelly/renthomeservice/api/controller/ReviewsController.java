@@ -1,6 +1,7 @@
 package com.travelly.renthomeservice.api.controller;
 
 import com.travelly.renthomeservice.api.dto.ReviewsDtoRequest;
+import com.travelly.renthomeservice.api.exception.PropertiesNotFoundException;
 import com.travelly.renthomeservice.api.resource.ReviewsResource;
 import com.travelly.renthomeservice.api.service.ReviewsService;
 import lombok.AllArgsConstructor;
@@ -22,9 +23,8 @@ public class ReviewsController implements ReviewsResource {
         try {
             reviewsService.saveReviews(propertyId, reviewsDtoRequest);
             return new ResponseEntity<>("Отзыв успешно добавлен к объявлению", HttpStatus.OK);
-        } catch (Exception e) {
-            log.error("Отзыв не может быть сохранен. Message: {}.  StackTrace: {}."
-                    , e.getMessage(), e.getStackTrace());
+        } catch (PropertiesNotFoundException e) {
+            log.error("Отзыв не может быть сохранен");
             return new ResponseEntity<>("Отзыв не может быть сохранен", HttpStatus.BAD_REQUEST);
 
         }

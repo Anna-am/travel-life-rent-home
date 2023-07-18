@@ -21,18 +21,17 @@ import java.util.UUID;
 public class ReviewsService {
     private final ReviewsMapper reviewsMapper;
     private final ReviewsRepository reviewsRepository;
-    private  final PropertiesRepository propertiesRepository;
-    private  final  PropertyService propertyService;
+    private final PropertiesRepository propertiesRepository;
 
     @Transactional
-    public void saveReviews (UUID propertyId, ReviewsDtoRequest reviewsDtoRequest) {
-        propertyService.saveProp();
-        log.info("Cj[hfyty");
+    public void saveReviews(UUID propertyId, ReviewsDtoRequest reviewsDtoRequest) {
         if (propertiesRepository.findById(propertyId).isPresent()) {
-            Reviews reviews = reviewsMapper.convertToDto(reviewsDtoRequest, Reviews.class);
+            log.info("Объявление найдено в бд rh_properties");
+            final Reviews reviews = reviewsMapper.convertToEntity(reviewsDtoRequest, Reviews.class);
             reviews.setCreatedAt(Timestamp.valueOf(LocalDateTime.now()));
             reviews.setPropertyId(propertyId);
             reviewsRepository.save(reviews);
+            log.info("Отзыв добавлен в бд");
         } else {
             throw new PropertiesNotFoundException("Объявление c id" + propertyId + "не найдено");
 
