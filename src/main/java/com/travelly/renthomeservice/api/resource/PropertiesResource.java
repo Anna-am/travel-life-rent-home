@@ -12,12 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-
-@Tags(
-        value = {
-                @Tag(name = "объявление", description = "Работа с объявлениями")
-        }
-)
+@Tags(value = {@Tag(name = "объявление", description = "Работа с объявлениями")})
 
 public interface PropertiesResource {
 

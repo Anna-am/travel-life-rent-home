@@ -14,13 +14,13 @@ public class PropertiesMapper {
 
     private final ModelMapper modelMapper;
 
-    public Properties convertToProperties (PropertiesDto propertiesDto) {
-        log.info("конвертация из entity в dto");
+    public Properties convertToProperties(PropertiesDto propertiesDto) {
+        log.info("convert from entity to dto");
         return modelMapper.map(propertiesDto, Properties.class);
     }
 
-    public PropertiesDto convertToPropertiesDto (Properties properties) {
-        log.info("конвертация из dto в entity");
+    public PropertiesDto convertToPropertiesDto(Properties properties) {
+        log.info("convert from dto to entity");
         return modelMapper.map(properties, PropertiesDto.class);
     }
 }

@@ -18,10 +18,8 @@ public class PropertiesController implements PropertiesResource {
     private final PropertiesServiceImp propertiesServiceImp;
     private final PropertiesMapper propertiesMapper;
 
-
-    @Override
     public ResponseEntity<Object> createProperties(PropertiesDto propertyDto) {
-        log.info("добавление объявления");
+        log.info("app property");
         propertiesServiceImp.addProperty(propertiesMapper.convertToProperties(propertyDto));
         return ResponseEntity.ok(HttpStatus.OK);
     }

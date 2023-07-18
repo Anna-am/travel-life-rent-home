@@ -4,5 +4,5 @@ import com.travelly.renthomeservice.entity.Properties;
 
 public interface PropertyService {
 
-    public void addProperty(Properties property);
+    void addProperty(Properties property);
 }
