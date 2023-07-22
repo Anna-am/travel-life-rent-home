@@ -12,7 +12,7 @@ public class ReviewsMapper {
 
     private final ModelMapper modelMapper;
 
-    public Reviews convertToEntity(ReviewsDtoRequest reviewsDtoRequest, Class<Reviews> reviewsClass) {
+    public Reviews convertToEntity(ReviewsDtoRequest reviewsDtoRequest) {
         return modelMapper.map(reviewsDtoRequest, Reviews.class);
     }
 }

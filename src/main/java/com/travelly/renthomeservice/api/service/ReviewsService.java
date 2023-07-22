@@ -27,8 +27,8 @@ public class ReviewsService {
     public void saveReviews(UUID propertyId, ReviewsDtoRequest reviewsDtoRequest) {
         if (propertiesRepository.findById(propertyId).isPresent()) {
             log.info("Объявление найдено в бд rh_properties");
-            final Reviews reviews = reviewsMapper.convertToEntity(reviewsDtoRequest, Reviews.class);
-            reviews.setCreatedAt(Timestamp.valueOf(LocalDateTime.now()));
+            final Reviews reviews = reviewsMapper.convertToEntity(reviewsDtoRequest);
+            reviews.setCreatedAt(LocalDateTime.now());
             reviews.setPropertyId(propertyId);
             reviewsRepository.save(reviews);
             log.info("Отзыв добавлен в бд");
