@@ -12,11 +12,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import static com.travelly.renthomeservice.api.util.UrlConstant.URL_RHS_PROPERTIES;
+
 @Tags(value = {@Tag(name = "объявление", description = "Работа с объявлениями")})
 
 public interface PropertiesResource {
 
-    @PostMapping("/rent-home/property")
+    @PostMapping(URL_RHS_PROPERTIES)
     @Operation(summary = "Создание объявления")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Объявление создано",

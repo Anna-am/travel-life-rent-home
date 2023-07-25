@@ -2,7 +2,7 @@ spring:
   application:
     name: rent-home-service
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=postgres
     username: postgres
     password: admin
   jpa:
