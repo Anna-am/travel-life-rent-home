@@ -25,13 +25,13 @@ public class ReviewsService {
 
     @Transactional
     public void saveReviews(UUID propertyId, ReviewsDtoRequest reviewsDtoRequest) {
-        if (propertiesRepository.findById(propertyId).isPresent()) {
-            log.info("Объявление найдено в бд rh_properties");
+        if (propertiesRepository.existsById(propertyId)) {
+            log.info("Объявление c ID: {} найдено в бд rh_properties", propertyId);
             final Reviews reviews = reviewsMapper.convertToEntity(reviewsDtoRequest);
             reviews.setCreatedAt(Timestamp.valueOf(LocalDateTime.now()));
             reviews.setPropertyId(propertyId);
-            reviewsRepository.save(reviews);
-            log.info("Отзыв добавлен в бд");
+            final Reviews savedReviews = reviewsRepository.save(reviews);
+            log.info("Отзыв c ID: {} добавлен к объявлению с ID: {}", savedReviews.getId(), propertyId);
         } else {
             throw new PropertiesNotFoundException("Объявление c id" + propertyId + "не найдено");
 
