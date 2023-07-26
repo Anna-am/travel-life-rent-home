@@ -17,11 +17,12 @@ public class PropertiesServiceImp implements PropertyService {
     private final PropertiesRepository propertiesRepository;
 
     @Transactional
-    public void addProperty(Properties property) {
+    public Properties addProperty(Properties property) {
         property.setAvailableBooking(true);
         property.setCreatedAt(LocalDateTime.now());
         property.setUpdatedAt(LocalDateTime.now());
         log.info("save property {} in BD", property);
         propertiesRepository.save(property);
+        return property;
     }
 }

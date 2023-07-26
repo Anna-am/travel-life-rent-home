@@ -1,5 +1,5 @@
-//package com.travelly.renthomeservice;
-//
+package com.travelly.renthomeservice;
+
 //import org.junit.jupiter.api.Disabled;
 //import org.springframework.boot.SpringApplication;
 //import org.springframework.boot.test.context.TestConfiguration;
