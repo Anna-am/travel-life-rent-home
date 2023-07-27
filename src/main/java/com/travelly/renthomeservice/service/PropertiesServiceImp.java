@@ -1,7 +1,9 @@
 package com.travelly.renthomeservice.service;
 
+import com.travelly.renthomeservice.api.dto.PropertiesDto;
+import com.travelly.renthomeservice.api.repository.PropertiesRepository;
+import com.travelly.renthomeservice.api.util.PropertiesMapper;
 import com.travelly.renthomeservice.entity.Properties;
-import com.travelly.renthomeservice.repository.PropertiesRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -15,9 +17,11 @@ import java.time.LocalDateTime;
 public class PropertiesServiceImp implements PropertyService {
 
     private final PropertiesRepository propertiesRepository;
+    private final PropertiesMapper propertiesMapper;
 
     @Transactional
-    public Properties addProperty(Properties property) {
+    public Properties addProperty(PropertiesDto propertyDto) {
+        final Properties property = propertiesMapper.convertToProperties(propertyDto);
         property.setAvailableBooking(true);
         property.setCreatedAt(LocalDateTime.now());
         property.setUpdatedAt(LocalDateTime.now());
