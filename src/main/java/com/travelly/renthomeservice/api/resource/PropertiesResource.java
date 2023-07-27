@@ -12,7 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import static com.travelly.renthomeservice.api.util.UrlConstant.URL_RHS_PROPERTIES;
+import static com.travelly.renthomeservice.api.util.UrlConstants.URL_RHS_PROPERTIES;
 
 @Tags(value = {@Tag(name = "объявление", description = "Работа с объявлениями")})
 

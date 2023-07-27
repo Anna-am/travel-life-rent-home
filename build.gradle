@@ -37,7 +37,6 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test:2.7.2'
     testImplementation 'org.testcontainers:junit-jupiter:1.17.6'
     testImplementation 'org.testcontainers:postgresql:1.17.6'
-//    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
 }
 
 test {
@@ -47,7 +46,7 @@ test {
 checkstyle {
     toolVersion '10.3.1'
     configFile file("config/checkstyle/checkstyle.xml")
-    ignoreFailures = true
+    ignoreFailures = false
     maxWarnings = 0
     maxErrors = 0
 }
