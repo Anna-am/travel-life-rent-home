@@ -13,9 +13,7 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
-@Table(name = "rh_properties")
+@Table(name = "rh_properties", schema = "postgres")
 public class Properties implements Serializable {
 
     @Id

@@ -4,6 +4,6 @@ import lombok.experimental.UtilityClass;
 
 @UtilityClass
 public class UrlConstants {
+    public static final String URL_RHS_PROPERTIES = "/rent-home/property";
     public static final String RENT_HOME_URL = "/rent-home";
-
 }

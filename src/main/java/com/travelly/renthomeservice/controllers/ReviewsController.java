@@ -1,9 +1,9 @@
-package com.travelly.renthomeservice.api.controller;
+package com.travelly.renthomeservice.controllers;
 
 import com.travelly.renthomeservice.api.dto.ReviewsDtoRequest;
 import com.travelly.renthomeservice.api.exception.PropertiesNotFoundException;
 import com.travelly.renthomeservice.api.resource.ReviewsResource;
-import com.travelly.renthomeservice.api.service.ReviewsService;
+import com.travelly.renthomeservice.service.ReviewsService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
