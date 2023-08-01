@@ -16,7 +16,7 @@ public class PropertiesController implements PropertiesResource {
 
     private PropertyService propertyService;
 
-    public ResponseEntity<Object> createProperties(PropertiesDto propertyDto) {
+    public ResponseEntity<HttpStatus> createProperties(PropertiesDto propertyDto) {
         log.info("app property");
         propertyService.addProperty(propertyDto);
         return ResponseEntity.ok(HttpStatus.OK);
