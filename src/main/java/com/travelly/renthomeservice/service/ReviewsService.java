@@ -1,4 +1,4 @@
-package com.travelly.renthomeservice.api.service;
+package com.travelly.renthomeservice.service;
 
 import com.travelly.renthomeservice.api.dto.ReviewsDtoRequest;
 import com.travelly.renthomeservice.api.exception.PropertiesNotFoundException;

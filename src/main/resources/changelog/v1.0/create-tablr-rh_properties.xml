@@ -25,36 +25,37 @@
                 <constraints nullable="false"/>
             </column>
             <column name="zip_code" type="varchar(255)">
-                <constraints nullable="false"/>
+                <constraints nullable="true"/>
             </column>
             <column name="country" type="varchar(255)">
                 <constraints nullable="false"/>
             </column>
             <column name="property_type" type="varchar(255)">
-                <constraints nullable="false"/>
+                <constraints nullable="true"/>
             </column>
             <column name="bedrooms" type="varchar(255)">
-                <constraints nullable="false"/>
+                <constraints nullable="true"/>
             </column>
             <column name="bathrooms" type="varchar(255)">
-                <constraints nullable="false"/>
+                <constraints nullable="true"/>
             </column>
             <column name="accommodates" type="varchar(255)">
-                <constraints nullable="false"/>
+                <constraints nullable="true"/>
             </column>
             <column name="price_per_night" type="numeric">
-                <constraints nullable="false"/>
+                <constraints nullable="true"/>
             </column>
             <column name="price_per_month" type="numeric">
-                <constraints nullable="false"/>
+                <constraints nullable="true"/>
             </column>
             <column name="minimum_stay_days" type="integer">
-                <constraints nullable="false"/>
+                <constraints nullable="true"/>
             </column>
             <column name="maximum_stay_days" type="integer">
-                <constraints nullable="false"/>
+                <constraints nullable="true"/>
             </column>
             <column name="available_booking" type="boolean">
+                <constraints nullable="false"/>
             </column>
             <column name="created_at" type="timestamp">
                 <constraints nullable="true"/>

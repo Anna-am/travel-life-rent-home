@@ -13,7 +13,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Getter
 @Setter
-@Table(name = "rh_bookings")
+@Table(name = "rh_bookings", schema = "postgres")
 public class Bookings {
 
     @Id
