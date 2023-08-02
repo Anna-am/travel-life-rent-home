@@ -52,6 +52,9 @@ databaseChangeLog:
                   type: timestamp
                   constraints:
                     nullable: true
+      rollback:
+        - dropTable:
+            tableName: rh_bookings
 
 
 
