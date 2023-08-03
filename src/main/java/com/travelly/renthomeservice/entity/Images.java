@@ -12,14 +12,18 @@ import java.util.UUID;
 @AllArgsConstructor
 @Table(name = "rh_images", schema = "postgres")
 public class Images {
+
     @Id
     @Column(name = "id")
     @GeneratedValue
     private UUID id;
+
     @Column(name = "property_id")
     private UUID propertyId;
+
     @Column(name = "value")
     private byte[] value;
+
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
