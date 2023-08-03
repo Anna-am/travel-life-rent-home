@@ -16,8 +16,9 @@ public class Images {
     @Column(name = "id")
     @GeneratedValue
     private UUID id;
-    @Column(name = "property_id")
-    private UUID propertyId;
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinColumn(name = "property_id")
+    private Properties propertyId;
     @Column(name = "value")
     private byte[] value;
     @Column(name = "created_at")

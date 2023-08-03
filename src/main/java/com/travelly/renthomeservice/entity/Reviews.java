@@ -20,9 +20,9 @@ public class Reviews {
     @GeneratedValue
     private UUID id;
 
-    @Column(name = "property_id")
-    @GeneratedValue
-    private UUID propertyId;
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinColumn(name = "property_id")
+    private Properties propertyId;
 
     @Column(name = "rating", columnDefinition = "NUMERIC(5,2)")
     private Double rating;

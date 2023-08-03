@@ -75,15 +75,12 @@ public class Properties implements Serializable {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "property_id")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "propertyId")
     private List<Bookings> bookings;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "property_id")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "propertyId")
     private List<Reviews> reviews;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "property_id")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "propertyId")
     private List<Images> images;
 }

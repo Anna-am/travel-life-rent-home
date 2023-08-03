@@ -21,8 +21,9 @@ public class Bookings {
     @Column(name = "id")
     private UUID id;
 
-    @Column(name = "property_id")
-    private UUID propertyId;
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinColumn(name = "property_id")
+    private Properties propertyId;
 
     @Column(name = "check_in_date")
     private Timestamp checkInDate;
