@@ -18,3 +18,10 @@ spring:
     user: postgres
     password: admin
     change-log: classpath:changelog/changelog-v1.0.xml
+
+  kafka:
+    bootstrap-servers: localhost:29092
+    consumer:
+      auto-offset-reset: latest
+      group-id: groupConsumer
+      topic: tg_property_pub
