@@ -14,9 +14,9 @@ public class PropertiesMapper {
 
     private final ModelMapper modelMapper;
 
-    public Properties convertToProperties(PropertiesDto propertiesDto) {
+    public Properties convertToProperties(Object obj) {
         log.info("convert from dto to Property");
-        return modelMapper.map(propertiesDto, Properties.class);
+        return modelMapper.map(obj, Properties.class);
     }
 
     public PropertiesDto convertToPropertiesDto(Object notExactlyProperty) {
