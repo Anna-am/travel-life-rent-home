@@ -20,7 +20,7 @@ public class PropertiesListener {
     @KafkaListener(topics = "tg_property_pub")
     public void receive(@Payload PropertiesMessage data) {
         log.info("received data='{}'", data);
-        Properties property = propertiesMapper.convertToProperties(data);
+        final Properties property = propertiesMapper.convertToProperties(data);
         property.setUpdatedAt(property.getCreatedAt());
         property.setAvailableBooking(true);
         propertiesRepository.save(property);

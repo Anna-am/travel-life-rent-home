@@ -23,7 +23,7 @@ public class KafkaConsumerConfig {
     @Bean
     public Map<String, Object> consumerConfig() {
 
-        Map<String, Object> properties = new HashMap<>();
+        final Map<String, Object> properties = new HashMap<>();
         properties.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:29092");
         properties.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, IntegerDeserializer.class.getName());
         properties.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class.getName());
@@ -42,7 +42,7 @@ public class KafkaConsumerConfig {
 
     @Bean
     public ConcurrentKafkaListenerContainerFactory<String, PropertiesMessage> kafkaListenerContainerFactory() {
-        ConcurrentKafkaListenerContainerFactory<String, PropertiesMessage> factory =
+        final ConcurrentKafkaListenerContainerFactory<String, PropertiesMessage> factory =
                 new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(consumerFactory());
         return factory;
